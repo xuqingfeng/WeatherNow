@@ -10,9 +10,12 @@ class WeatherModel {
     var weatherIcon: UIImage?
     var humidity: Int?
     var description: String?
+    
 
     init(weatherNSDictionary: NSDictionary){
         
+        // 顺序有影响。。。迷
+        var unixTime = weatherNSDictionary["dt"] as Int
         // location
         self.location = weatherNSDictionary["name"] as? String
         
@@ -34,10 +37,9 @@ class WeatherModel {
         self.description = weatherNSDictionary["main"] as? String
         
         // currentTime
-//        var unixTime = weatherNSDictionary["dt"] as Int
-        var unixTime = 1418709600
-//        var unixTimeInInt = unixTime.toInt()
         self.currentTime = timeFormat(unixTime)
+        
+        
     }
     
     func timeFormat(unixTime: Int) -> String {

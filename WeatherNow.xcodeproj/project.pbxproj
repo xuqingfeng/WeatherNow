@@ -14,7 +14,6 @@
 		4FE28EF91A3AE36A00A1518F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FE28EF81A3AE36A00A1518F /* Images.xcassets */; };
 		4FE28EFC1A3AE36A00A1518F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE28EFA1A3AE36A00A1518F /* LaunchScreen.xib */; };
 		4FE28F081A3AE36A00A1518F /* WeatherNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE28F071A3AE36A00A1518F /* WeatherNowTests.swift */; };
-		4FE28F121A3AE64A00A1518F /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE28F111A3AE64A00A1518F /* APIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		4FE28F011A3AE36A00A1518F /* WeatherNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE28F061A3AE36A00A1518F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE28F071A3AE36A00A1518F /* WeatherNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowTests.swift; sourceTree = "<group>"; };
-		4FE28F111A3AE64A00A1518F /* APIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 			children = (
 				4FE28EF11A3AE36A00A1518F /* AppDelegate.swift */,
 				4FE28EF31A3AE36A00A1518F /* ViewController.swift */,
-				4FE28F111A3AE64A00A1518F /* APIModel.swift */,
 				4F4203361A3EC87C00F23D11 /* WeatherModel.swift */,
 				4FE28EF51A3AE36A00A1518F /* Main.storyboard */,
 				4FE28EF81A3AE36A00A1518F /* Images.xcassets */,
@@ -219,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE28EF41A3AE36A00A1518F /* ViewController.swift in Sources */,
-				4FE28F121A3AE64A00A1518F /* APIModel.swift in Sources */,
 				4F4203371A3EC87C00F23D11 /* WeatherModel.swift in Sources */,
 				4FE28EF21A3AE36A00A1518F /* AppDelegate.swift in Sources */,
 			);
