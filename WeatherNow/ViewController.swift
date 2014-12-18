@@ -64,13 +64,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     println("json error")
                 }
                 
-                println(weatherNSDictionary)
+//                println(weatherNSDictionary)
                 
                 var weatherModel = WeatherModel(weatherNSDictionary: weatherNSDictionary)
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.iconView.image = weatherModel.weatherIcon!
-                    self.locationLabel.text = weatherModel.location!
+                    if var country = weatherModel.country {
+                        self.locationLabel.text = "\(weatherModel.location!),\(weatherModel.country!)"
+                    }else{
+                        self.locationLabel.text = "\(weatherModel.location!)"
+                    }
                     self.timeLabel.text = weatherModel.currentTime!
                     self.temperatureLabel.text = "\(weatherModel.temperature!)"
                     self.humidityLabel.text = "\(weatherModel.humidity!)%"
@@ -82,6 +86,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.refreshButton.hidden = false
                 })
                 
+                
+            }else {
+                
+                var networkIssueController = UIAlertController(title: "Error", message: "Internet Connection Error", preferredStyle: .Alert)
+                
+                var okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                var cancelButton = UIAlertAction(title: "Cancel", style: .Cancel,handler: nil)
+                networkIssueController.addAction(okButton)
+                networkIssueController.addAction(cancelButton)
+                
+                self.presentViewController(networkIssueController, animated: true, completion: nil)
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    // stop refresh
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refreshActivityIndicator.hidden = true
+                    self.refreshButton.hidden = false
+                })
                 
             }
         })

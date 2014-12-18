@@ -5,6 +5,7 @@ import UIKit
 class WeatherModel {
     
     var location: String?
+    var country: String?
     var currentTime: String?
     var temperature: Int?
     var weatherIcon: UIImage?
@@ -18,6 +19,10 @@ class WeatherModel {
         var unixTime = weatherNSDictionary["dt"] as Int
         // location
         self.location = weatherNSDictionary["name"] as? String
+        
+        // country
+        var sys = weatherNSDictionary["sys"] as NSDictionary
+        self.country = sys["country"] as? String
         
         // temperature
         var main = weatherNSDictionary["main"] as NSDictionary
